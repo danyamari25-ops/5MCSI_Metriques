@@ -1,119 +1,127 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Contactez-moi</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        /* Reset rapide */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+  <meta charset="UTF-8">
+  <title>Contactez-moi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(120deg, #84fab0, #8fd3f4);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
 
-        body {
-            font-family: 'Roboto', Arial, sans-serif;
-            background: linear-gradient(to right, #74ebd5, #ACB6E5);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
+    .container {
+      background: rgba(255,255,255,0.95);
+      padding: 50px 40px;
+      border-radius: 20px;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+      animation: slideIn 1s ease-out;
+    }
 
-        .container {
-            background: #ffffffcc;
-            padding: 40px;
-            border-radius: 12px;
-            max-width: 600px;
-            width: 100%;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-            animation: fadeIn 1s ease-out;
-        }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2em;
+      color: #333;
+      position: relative;
+    }
+    h2::after {
+      content: '';
+      width: 80px;
+      height: 4px;
+      background: #5cb85c;
+      display: block;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
 
-        h2 {
-            color: #333;
-            margin-bottom: 25px;
-            font-weight: 700;
-            text-align: center;
-            position: relative;
-        }
+    form label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 500;
+      color: #555;
+    }
 
-        h2::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background-color: #5cb85c;
-            margin: 10px auto 0;
-            border-radius: 2px;
-        }
+    input, textarea {
+      width: 100%;
+      padding: 15px;
+      margin-top: 5px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+      transition: all 0.3s ease;
+    }
 
-        label {
-            display: block;
-            margin-top: 15px;
-            font-weight: 500;
-            color: #555;
-        }
+    input:focus, textarea:focus {
+      border-color: #5cb85c;
+      box-shadow: 0 0 10px rgba(92,184,92,0.5);
+      outline: none;
+    }
 
-        input[type="text"], textarea {
-            width: 100%;
-            padding: 12px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            font-size: 1em;
-            transition: border-color 0.3s;
-        }
+    button {
+      margin-top: 25px;
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(45deg, #5cb85c, #4cae4c);
+      color: #fff;
+      font-size: 1.1em;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.4s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
 
-        input[type="text"]:focus, textarea:focus {
-            border-color: #5cb85c;
-            outline: none;
-        }
+    button:hover {
+      background: linear-gradient(45deg, #4cae4c, #3b8d3b);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      transform: translateY(-2px);
+    }
 
-        button {
-            background-color: #5cb85c;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 1em;
-            margin-top: 20px;
-            width: 100%;
-            transition: background-color 0.3s;
-        }
+    .note {
+      text-align: center;
+      margin-top: 15px;
+      color: #666;
+      font-size: 0.85em;
+    }
 
-        button:hover {
-            background-color: #4cae4c;
-        }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-        .note {
-            margin-top: 15px;
-            font-size: 0.85em;
-            color: #666;
-            text-align: center;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px);}
-            to { opacity: 1; transform: translateY(0);}
-        }
-    </style>
+    @media(max-width: 600px){
+      .container { padding: 30px 20px; }
+      h2 { font-size: 1.7em; }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h2>📧 Contactez-moi</h2>
-        <form>
-            <label for="nom">Nom :</label>
-            <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+  <div class="container">
+    <h2><i class="fas fa-envelope"></i> Contactez-moi</h2>
+    <form>
+      <label for="nom">Nom :</label>
+      <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
 
-            <label for="prenom">Prénom :</label>
-            <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+      <label for="prenom">Prénom :</label>
+      <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
 
-            <label for="message">Votre message :</label>
-            <textarea id="message" name="message" rows="5" placeholder="Écrivez votre message..." required></textarea>
+      <label for="message">Votre message :</label>
+      <textarea id="message" name="message" rows="5" placeholder="Écrivez votre message..." required></textarea>
 
-            <button type="submit">Envoyer</button>
-            <p class="note">*L'enregistrement des données n'est pas actif pour cet exercice.</p>
-        </form>
-    </div>
+      <button type="submit"><i class="fas fa-paper-plane"></i> Envoyer</button>
+      <p class="note">*Simulation – les données ne sont pas enregistrées.</p>
+    </form>
+  </div>
 </body>
 </html>
