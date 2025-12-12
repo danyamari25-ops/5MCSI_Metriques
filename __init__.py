@@ -15,10 +15,14 @@ def hello_world():
 def MaPremiereAPI():
     return "<h2>Ma page de contact</h2>"
 
+# -------------------------------
+# 👉 Nouvelle route /rapport/
+# -------------------------------
+@app.route("/rapport/")
+def mongraphique():
+    return render_template("graphique.html")
+# -------------------------------
 
-# -------------------------------
-# 👉 Ajoute cette route ici
-# -------------------------------
 @app.route('/tawarano/')
 def meteo():
     # Appel de l'API OpenWeatherMap
@@ -38,9 +42,6 @@ def meteo():
 
     # Renvoi des résultats en JSON
     return jsonify(results=results)
-# -------------------------------
-
-
 
 if __name__ == "__main__":
     app.run(debug=True)
